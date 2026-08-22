@@ -1,5 +1,8 @@
 .navbar {
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   min-height: 88px;
   padding: 0 5%;
   display: flex;
@@ -17,11 +20,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-size: 28px;
   font-weight: 700;
   color: #126b5c;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .brand-icon {
