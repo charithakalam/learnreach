@@ -1,4 +1,5 @@
 import FeatureCard from '../../components/FeatureCard/FeatureCard'
+import { Link } from 'react-router-dom'
 import './Features.css'
 
 function Features() {
@@ -118,9 +119,9 @@ function Features() {
           </p>
         </div>
 
-        <button>
+        <Link to="/login" className="features-cta-button">
           Start Learning →
-        </button>
+        </Link>
 
       </section>
 

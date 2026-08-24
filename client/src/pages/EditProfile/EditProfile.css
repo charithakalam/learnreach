@@ -1,0 +1,128 @@
+.edit-profile-page {
+  min-height: calc(100vh - 88px);
+  padding: 50px 7%;
+  background: #f7faf3;
+  box-sizing: border-box;
+}
+
+.edit-profile-card {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #e1e9df;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(14, 92, 78, 0.06);
+  box-sizing: border-box;
+}
+
+.edit-profile-header {
+  margin-bottom: 30px;
+}
+
+.edit-profile-header h1 {
+  margin: 0;
+  color: #084c42;
+  font-size: 30px;
+}
+
+.edit-profile-header p {
+  margin: 8px 0 0;
+  color: #607d79;
+  font-size: 15px;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-form-group label {
+  color: #164f47;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.edit-form-group input,
+.edit-form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d9e4da;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #164f47;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus {
+  border-color: #0f8b7c;
+  box-shadow: 0 0 0 3px rgba(15, 139, 124, 0.08);
+}
+
+.edit-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cancel-profile-button,
+.save-profile-button {
+  padding: 12px 22px;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-profile-button {
+  background: #ffffff;
+  border: 1px solid #d9e4da;
+  color: #526b66;
+}
+
+.cancel-profile-button:hover {
+  background: #f5f8f3;
+}
+
+.save-profile-button {
+  border: none;
+  background: #117c68;
+  color: #ffffff;
+}
+
+.save-profile-button:hover {
+  background: #0d6656;
+}
+
+@media (max-width: 600px) {
+  .edit-profile-page {
+    padding: 30px 15px;
+  }
+
+  .edit-profile-card {
+    padding: 28px 20px;
+  }
+
+  .edit-profile-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-profile-button,
+  .save-profile-button {
+    width: 100%;
+  }
+}

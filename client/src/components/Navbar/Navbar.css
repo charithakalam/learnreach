@@ -90,10 +90,51 @@
 
   cursor: pointer;
 
+  text-decoration: none;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .login-btn:hover {
   background: #0d6656;
   transform: translateY(-2px);
+}
+
+.student-profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px 8px 9px;
+
+  background: #edf8e9;
+  border: 1px solid #e1eedc;
+  border-radius: 28px;
+
+  color: #29463f;
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.student-profile:hover {
+  background: #e5f4df;
+  transform: translateY(-1px);
+}
+
+.student-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #caf7b9;
+  border-radius: 50%;
+
+  font-size: 18px;
 }

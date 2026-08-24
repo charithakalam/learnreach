@@ -1,0 +1,206 @@
+.learning-page {
+  min-height: calc(100vh - 70px);
+  padding: 50px 7%;
+  background: #f7faf3;
+}
+
+/* Header */
+
+.learning-header {
+  margin-bottom: 45px;
+}
+
+.learning-label {
+  margin: 0 0 10px;
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.learning-header h1 {
+  margin: 0;
+  color: #084c42;
+  font-size: 38px;
+}
+
+.learning-header p {
+  margin: 10px 0 0;
+  color: #607d79;
+  font-size: 17px;
+}
+
+
+/* Sections */
+
+.learning-section {
+  margin-bottom: 45px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #084c42;
+  font-size: 25px;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+  color: #718681;
+}
+
+
+/* Continue Learning */
+
+.continue-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e3ebe1;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(14, 92, 78, 0.06);
+}
+
+.continue-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #eef7e6;
+  border-radius: 16px;
+  font-size: 30px;
+}
+
+.continue-content {
+  flex: 1;
+}
+
+.continue-content > span {
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.continue-content h3 {
+  margin: 5px 0 15px;
+  color: #164f47;
+  font-size: 19px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #718681;
+  font-size: 12px;
+}
+
+.progress-bar {
+  height: 8px;
+  overflow: hidden;
+  background: #e8eee8;
+  border-radius: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0f766e;
+  border-radius: 10px;
+}
+
+.continue-button {
+  padding: 11px 22px;
+  border-radius: 22px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.continue-button:hover {
+  background: #0b625b;
+}
+
+
+/* Subject Progress */
+
+.subject-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.subject-progress-card {
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e3ebe1;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(14, 92, 78, 0.05);
+}
+
+.subject-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.subject-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef7e6;
+  border-radius: 14px;
+  font-size: 27px;
+}
+
+.subject-top h3 {
+  margin: 0 0 5px;
+  color: #164f47;
+  font-size: 18px;
+}
+
+.subject-top p {
+  margin: 0;
+  color: #718681;
+  font-size: 13px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 750px) {
+  .learning-page {
+    padding: 35px 20px;
+  }
+
+  .learning-header h1 {
+    font-size: 30px;
+  }
+
+  .continue-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .continue-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .subject-progress-grid {
+    grid-template-columns: 1fr;
+  }
+}

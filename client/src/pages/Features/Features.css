@@ -176,7 +176,7 @@
   font-size: 14px;
 }
 
-.features-cta button {
+.features-cta-button {
   padding: 15px 28px;
 
   border: none;
@@ -192,11 +192,12 @@
   font-weight: 700;
 
   cursor: pointer;
+  text-decoration:none;
 
   transition: transform 0.2s ease;
 }
 
-.features-cta button:hover {
+.features-cta-button:hover {
   transform: translateY(-2px);
 }
 

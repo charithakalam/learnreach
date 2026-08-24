@@ -1,0 +1,125 @@
+.student-subjects-page {
+  min-height: calc(100vh - 70px);
+  padding: 50px 7%;
+  background: #f7faf3;
+}
+
+.student-subjects-header {
+  margin-bottom: 40px;
+}
+
+.student-subjects-label {
+  margin: 0 0 10px;
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.student-subjects-header h1 {
+  margin: 0;
+  color: #084c42;
+  font-size: 38px;
+}
+
+.student-subjects-header p {
+  margin: 10px 0 0;
+  color: #607d79;
+  font-size: 17px;
+}
+
+.student-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.student-subject-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e3ebe1;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(14, 92, 78, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(14, 92, 78, 0.1);
+}
+
+.student-subject-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  background: #eef7e6;
+  border-radius: 17px;
+  font-size: 31px;
+}
+
+.student-subject-content h2 {
+  margin: 0 0 8px;
+  color: #164f47;
+  font-size: 23px;
+}
+
+.student-subject-content p {
+  margin: 0 0 25px;
+  color: #718681;
+  font-size: 14px;
+}
+
+.subject-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #718681;
+  font-size: 13px;
+}
+
+.subject-progress-bar {
+  height: 8px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background: #e8eee8;
+  border-radius: 10px;
+}
+
+.subject-progress-fill {
+  height: 100%;
+  background: #0f766e;
+  border-radius: 10px;
+}
+
+.subject-view-button {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 22px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.subject-view-button:hover {
+  background: #0b625b;
+}
+
+@media (max-width: 750px) {
+  .student-subjects-page {
+    padding: 35px 20px;
+  }
+
+  .student-subjects-header h1 {
+    font-size: 30px;
+  }
+
+  .student-subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}
