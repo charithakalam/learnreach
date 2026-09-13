@@ -1,66 +1,54 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/useAuth'
 import './EditProfile.css'
 
 function EditProfile() {
   const navigate = useNavigate()
+  const { user, setUser } = useAuth()
+
+  const [name, setName] = useState(user?.name || '')
+  const [email, setEmail] = useState(user?.email || '')
+  const [grade, setGrade] = useState(String(user?.grade || 6))
+  const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Temporary frontend-only action.
-    // Real profile update will be connected to the backend later.
-    navigate('/dashboard/profile')
+    const updatedUser = {
+      ...user,
+      name,
+      email,
+      grade: Number(grade),
+    }
+
+    setUser(updatedUser)
+    localStorage.setItem('learnreach_user', JSON.stringify(updatedUser))
+    setMessage('Profile data updated locally for this session. The backend API does not currently support profile updates.')
   }
 
   return (
     <main className="edit-profile-page">
-
       <section className="edit-profile-card">
-
         <div className="edit-profile-header">
           <h1>Edit Profile</h1>
           <p>Update your personal information.</p>
         </div>
 
-        <form
-          className="edit-profile-form"
-          onSubmit={handleSubmit}
-        >
-
+        <form className="edit-profile-form" onSubmit={handleSubmit}>
           <div className="edit-form-group">
             <label htmlFor="name">Name</label>
-
-            <input
-              id="name"
-              type="text"
-              defaultValue="Student"
-              placeholder="Enter your name"
-              required
-            />
+            <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" required />
           </div>
-
 
           <div className="edit-form-group">
             <label htmlFor="email">Email</label>
-
-            <input
-              id="email"
-              type="email"
-              defaultValue="student@email.com"
-              placeholder="Enter your email"
-              required
-            />
+            <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" required />
           </div>
-
 
           <div className="edit-form-group">
             <label htmlFor="grade">Grade</label>
-
-            <select
-              id="grade"
-              defaultValue="8"
-              required
-            >
+            <select id="grade" value={grade} onChange={(e) => setGrade(e.target.value)} required>
               <option value="6">Grade 6</option>
               <option value="7">Grade 7</option>
               <option value="8">Grade 8</option>
@@ -69,30 +57,19 @@ function EditProfile() {
             </select>
           </div>
 
+          {message && <p className="status-banner info">{message}</p>}
 
           <div className="edit-profile-actions">
-
-            <button
-              type="button"
-              className="cancel-profile-button"
-              onClick={() => navigate('/dashboard/profile')}
-            >
+            <button type="button" className="cancel-profile-button" onClick={() => navigate('/dashboard/profile')}>
               Cancel
             </button>
 
-            <button
-              type="submit"
-              className="save-profile-button"
-            >
+            <button type="submit" className="save-profile-button">
               Save Changes
             </button>
-
           </div>
-
         </form>
-
       </section>
-
     </main>
   )
 }

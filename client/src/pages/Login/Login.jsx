@@ -1,19 +1,30 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/useAuth'
 import './Login.css'
 
 function Login() {
   const navigate = useNavigate()
+  const { login } = useAuth()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
+    setLoading(true)
 
-    // Temporary frontend-only navigation.
-    // Backend authentication will be connected later.
-    navigate('/dashboard')
+    try {
+      await login({ email, password })
+      navigate('/dashboard')
+    } catch (apiError) {
+      setError(apiError.message || 'Unable to log in. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -53,14 +64,16 @@ function Login() {
             />
           </div>
 
-          <button type="submit" className="login-button">
-            Login
+          {error && <p className="error-message">{error}</p>}
+
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
           </button>
-          
+
         </form>
         <p className="login-footer">
-            Don't have an account?{' '}
-            <Link to="/signup">Sign Up</Link>
+          Don't have an account?{' '}
+          <Link to="/signup">Sign Up</Link>
         </p>
       </div>
     </main>

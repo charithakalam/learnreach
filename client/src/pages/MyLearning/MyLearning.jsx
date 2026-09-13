@@ -19,12 +19,6 @@ function MyLearning() {
     },
   ]
 
-  const completedLessons = [
-    'Introduction to Numbers',
-    'Basic Fractions',
-    'Science Fundamentals',
-  ]
-
   return (
     <main className="learning-page">
 

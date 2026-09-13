@@ -1,12 +1,17 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useAuth } from '../../context/useAuth'
 import './Navbar.css'
 
 function Navbar() {
   const location = useLocation()
+  const { isAuthenticated, user, logout } = useAuth()
 
-  // Temporary frontend logic.
-  // Later this will be replaced with real authentication state.
-  const isStudent = location.pathname.startsWith('/dashboard')
+  const isStudent = isAuthenticated || location.pathname.startsWith('/dashboard')
+  const studentName = user?.name || 'Student'
+
+  const handleLogout = () => {
+    logout()
+  }
 
   return (
     <header className="navbar">
@@ -17,8 +22,6 @@ function Navbar() {
       </Link>
 
       {isStudent ? (
-
-        /* Student Navbar */
         <>
           <nav className="nav-links">
 
@@ -71,15 +74,17 @@ function Navbar() {
 
             <Link to="/dashboard/profile" className="student-profile">
               <span className="student-avatar">👤</span>
-              <span>Student</span>
+              <span>{studentName}</span>
             </Link>
+
+            <button type="button" className="login-btn" onClick={handleLogout}>
+              Log Out
+            </button>
 
           </div>
         </>
 
       ) : (
-
-        /* Public Navbar */
         <>
           <nav className="nav-links">
 
@@ -136,7 +141,6 @@ function Navbar() {
 
           </div>
         </>
-
       )}
 
     </header>

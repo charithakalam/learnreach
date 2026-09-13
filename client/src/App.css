@@ -3,3 +3,46 @@
   background: #fffdf7;
   color: #173c35;
 }
+
+.page-loading {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f766e;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.status-banner {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #edf8e9;
+  color: #0f766e;
+  border: 1px solid #dfeed8;
+}
+
+.status-banner.error {
+  background: #fff1f1;
+  border-color: #f9d0d0;
+  color: #b42318;
+}
+
+.status-banner.empty {
+  background: #f7faf3;
+  border-color: #e5ebde;
+  color: #607d79;
+}
+
+.status-banner.info {
+  background: #f1f8ff;
+  border-color: #d6e8ff;
+  color: #1d4ed8;
+}
+
+.error-message {
+  margin: 0;
+  color: #b42318;
+  font-size: 14px;
+}

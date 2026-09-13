@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Features from './pages/Features/Features'
@@ -28,13 +29,63 @@ function App() {
         <Route path="/subjects" element={<Subjects />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/learning" element={<MyLearning />} />
-        <Route path="/dashboard/subjects" element={<StudentSubjects />} />
-        <Route path="/dashboard/progress" element={<Progress />} />
-        <Route path="/dashboard/profile" element={<Profile />} />
-        <Route path="/dashboard/profile/edit" element={<EditProfile />} /> 
-        <Route path="/dashboard/profile/password" element={<ChangePassword />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/learning"
+          element={
+            <ProtectedRoute>
+              <MyLearning />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/subjects"
+          element={
+            <ProtectedRoute>
+              <StudentSubjects />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/progress"
+          element={
+            <ProtectedRoute>
+              <Progress />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/profile/edit"
+          element={
+            <ProtectedRoute>
+              <EditProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/profile/password"
+          element={
+            <ProtectedRoute>
+              <ChangePassword />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   )
