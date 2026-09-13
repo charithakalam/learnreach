@@ -1,0 +1,29 @@
+### Sign Up
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Test Student",
+  "email": "teststudent@example.com",
+  "password": "Test@12345",
+  "grade": 6
+}
+
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "teststudent@example.com",
+  "password": "Test@12345"
+}
+
+
+### Get current user - without token
+GET http://localhost:5000/api/auth/me
+
+
+### Get current user - with token
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTg5YjJiODgxZGRhMzBkMzkxMTExMTkiLCJyb2xlIjoic3R1ZGVudCIsImdyYWRlIjo2LCJpYXQiOjE3ODc0NDcxNTQsImV4cCI6MTc4NzUzMzU1NH0.9cHOCQS1Hn5odgBQpK0y4MKvhFNGRznKkYGL7tuxuYs

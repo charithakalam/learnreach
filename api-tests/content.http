@@ -1,0 +1,26 @@
+### Get all grades
+GET http://localhost:5000/api/content/grades
+
+
+### Get subjects for Grade 6
+GET http://localhost:5000/api/content/grades/6a8a5419031ed23a0f1bd24c/subjects
+
+
+### Get topics for Mathematics
+GET http://localhost:5000/api/content/subjects/6a8a5419031ed23a0f1bd24d/topics
+
+
+### Get lessons for Algebra
+GET http://localhost:5000/api/content/topics/6a8a5419031ed23a0f1bd24f/lessons
+
+
+### Get quizzes for Algebra
+GET http://localhost:5000/api/quizzes/topic/6a8a5419031ed23a0f1bd24f
+
+
+### Get assignments for Algebra
+GET http://localhost:5000/api/assignments/topic/6a8a5419031ed23a0f1bd24f
+
+
+### Get progress for Test Student
+GET http://localhost:5000/api/progress/user/6a89b2b881dda30d39111119
